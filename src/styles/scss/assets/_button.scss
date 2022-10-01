@@ -1,0 +1,25 @@
+.btn {
+    border-radius: 999px;
+    border: 1px solid $black1;
+    padding: 9px 17px;
+    line-height: 14px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.header__btn {
+    background: $white1;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background: $white2;
+    }
+    &.reverse {
+        background: $black1;
+        color: $white1;
+        &:hover {
+            background: $dark__gray;
+        }
+    }
+}
