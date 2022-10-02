@@ -1,0 +1,50 @@
+.hamburger {
+    display: none;
+    @media screen and (max-width: 770px) {
+        display: block;
+        position: relative;
+        height: 12px;
+        width: 15px;
+        .bar1,
+        .bar3 {
+            transition: rotate 0.15s ease, translate 0.15s 0.2s ease;
+        }
+        .bar1,
+        .bar2,
+        .bar3 {
+            height: 2px;
+            width: 100%;
+            background-color: $black2;
+            position: absolute;
+        }
+        .bar1 {
+            top: 0;
+        }
+        .bar2 {
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity 0.1s 0.2s ease;
+        }
+        .bar3 {
+            bottom: 50%;
+            bottom: 0;
+        }
+        &.active {
+            .bar1,
+            .bar3 {
+                transition: translate 0.15s ease, rotate 0.15s 0.2s ease;
+            }
+            .bar1 {
+                translate: 0 5px;
+                rotate: 45deg;
+            }
+            .bar2 {
+                opacity: 0;
+            }
+            .bar3 {
+                translate: 0 -5px;
+                rotate: -45deg;
+            }
+        }
+    }
+}

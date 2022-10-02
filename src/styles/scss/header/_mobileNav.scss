@@ -1,0 +1,188 @@
+header {
+    @media screen and (max-width: 770px) {
+        .header__container {
+            &.active {
+                background-color: rgba($color: #000000, $alpha: 0.2);
+
+                overflow-y: scroll;
+                .header__left,
+                .header__right {
+                    transform: translateX(0);
+                }
+            }
+            .header__left,
+            .header__right {
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .header__left {
+                background-color: $white1;
+                width: calc(100% - 70px);
+                height: auto;
+                align-items: baseline;
+                nav {
+                    width: 100%;
+                    align-items: baseline;
+                    padding: 40px 0;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: calc(100% - 50px);
+                        height: 2px;
+                        background: $white3;
+                        position: absolute;
+                        bottom: 0;
+                        left: 25px;
+                    }
+                }
+                ul {
+                    align-items: baseline;
+                    justify-content: center;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    position: relative;
+                    .menu__li {
+                        a {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            pointer-events: none;
+                            svg {
+                                height: 50%;
+                                width: 30px;
+                            }
+                        }
+                        &.active {
+                            ul {
+                                transform: translateX(0);
+                            }
+                        }
+                        ul {
+                            display: flex;
+                            position: absolute;
+                            background: $white1;
+                            top: -40px;
+                            left: 0;
+                            height: 700px;
+                            width: 100%;
+                            z-index: 1;
+                            justify-content: flex-start;
+                            transform: translateX(110%);
+                            transition: transform 0.3s ease-in-out;
+                            li {
+                                display: flex;
+                                align-items: center;
+                                padding-left: 25px;
+                                width: 100%;
+                                height: 56px;
+                                &:hover {
+                                    background: $white3;
+                                }
+                                &:nth-child(1) {
+                                    svg {
+                                        height: 50%;
+                                        margin-right: 10px;
+                                        pointer-events: none;
+                                    }
+                                    background: $white3;
+                                }
+                            }
+                        }
+                    }
+
+                    .main__li {
+                        width: 100%;
+                        height: 56px;
+                        margin-left: 25px;
+                        font-weight: 400;
+                        font-size: 1.8rem;
+                        color: $black2;
+                        padding: 0 30px;
+                        line-height: 56px;
+                        min-width: 230px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: $white3;
+                            width: 100%;
+                        }
+                        &:nth-child(1),
+                        &:nth-child(2),
+                        &:nth-child(7),
+                        &:nth-child(6),
+                        &:nth-child(5),
+                        &:nth-child(4),
+                        &:nth-child(3) {
+                            display: block;
+                            margin: 0px;
+                        }
+
+                        &:nth-child(8) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .header__right {
+                flex-direction: column-reverse;
+                height: 100%;
+                background-color: $white1;
+                width: calc(100% - 70px);
+                align-items: baseline;
+                min-width: 0px;
+                max-width: none;
+                justify-content: flex-end;
+                flex-grow: 1;
+                position: relative;
+                &.active {
+                    &::before {
+                        transform: translateX(0);
+                    }
+                }
+                &::before {
+                    content: "";
+                    height: 100%;
+                    width: calc(100%);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $white1;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in-out;
+                }
+                a {
+                    margin-left: 25px;
+                    margin-bottom: 100px;
+                    height: 38px;
+
+                    &:hover {
+                        color: $light__gray;
+                        fill: $light__gray;
+                    }
+                    span {
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin-left: 5px;
+                    }
+                    svg {
+                        height: 60%;
+                    }
+                }
+
+                .header__btns {
+                    margin-left: 25px;
+                    background-color: $white1;
+                    width: calc(100% - 70px);
+                    flex-direction: column;
+                    margin-top: 20px;
+
+                    button {
+                        margin-bottom: 15px;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+    }
+}

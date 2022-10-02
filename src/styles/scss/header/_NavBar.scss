@@ -1,0 +1,42 @@
+.item__drop {
+    position: absolute;
+    overflow: hidden;
+    top: 57px;
+    @media screen and (max-width: 1020px) {
+        top: 42px;
+    }
+    #side__nav {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+
+        background: white;
+        align-items: center;
+        padding: 15px 0;
+        border-top: 4px solid $white3;
+        transform: translateY(-110%);
+        transition: transform 0.3s ease-in-out;
+
+        li {
+            pointer-events: all;
+
+            margin: 15px 0;
+            a {
+                position: relative;
+                color: $black2;
+                cursor: pointer;
+                z-index: 2;
+                &:hover {
+                    color: $dark__green;
+                }
+            }
+        }
+    }
+}
+.active {
+    ul {
+        &#side__nav {
+            transform: translateY(0%);
+        }
+    }
+}

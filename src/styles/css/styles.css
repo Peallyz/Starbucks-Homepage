@@ -24,71 +24,52 @@ a {
   text-decoration: none;
 }
 
-header {
-  height: 100px;
-  padding: 25px 33px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid black;
-}
-@media screen and (max-width: 1020px) {
-  header {
-    height: 70px;
-    padding: 10px 20px;
-  }
-}
-@media screen and (max-width: 770px) {
-  header {
-    padding: 15px;
-  }
-}
-header .hamburger {
+.hamburger {
   display: none;
 }
 @media screen and (max-width: 770px) {
-  header .hamburger {
+  .hamburger {
     display: block;
     position: relative;
     height: 12px;
     width: 15px;
   }
-  header .hamburger .bar1,
-header .hamburger .bar3 {
+  .hamburger .bar1,
+.hamburger .bar3 {
     transition: rotate 0.15s ease, translate 0.15s 0.2s ease;
   }
-  header .hamburger .bar1,
-header .hamburger .bar2,
-header .hamburger .bar3 {
+  .hamburger .bar1,
+.hamburger .bar2,
+.hamburger .bar3 {
     height: 2px;
     width: 100%;
     background-color: #1f1f1f;
     position: absolute;
   }
-  header .hamburger .bar1 {
+  .hamburger .bar1 {
     top: 0;
   }
-  header .hamburger .bar2 {
+  .hamburger .bar2 {
     top: 50%;
     transform: translateY(-50%);
     transition: opacity 0.1s 0.2s ease;
   }
-  header .hamburger .bar3 {
+  .hamburger .bar3 {
     bottom: 50%;
     bottom: 0;
   }
-  header .hamburger.active .bar1,
-header .hamburger.active .bar3 {
+  .hamburger.active .bar1,
+.hamburger.active .bar3 {
     transition: translate 0.15s ease, rotate 0.15s 0.2s ease;
   }
-  header .hamburger.active .bar1 {
+  .hamburger.active .bar1 {
     translate: 0 5px;
     rotate: 45deg;
   }
-  header .hamburger.active .bar2 {
+  .hamburger.active .bar2 {
     opacity: 0;
   }
-  header .hamburger.active .bar3 {
+  .hamburger.active .bar3 {
     translate: 0 -5px;
     rotate: -45deg;
   }
@@ -98,22 +79,17 @@ header .hamburger.active .bar3 {
   height: 100%;
   display: flex;
   align-items: center;
-}
-.header__left .header__logo {
-  display: block;
-  height: 100%;
-}
-.header__left .header__logo svg {
-  height: 100%;
-}
-@media screen and (max-width: 770px) {
-  .header__left nav {
-    display: none;
-  }
+  position: relative;
 }
 .header__left ul {
   display: flex;
   align-items: center;
+}
+.header__left ul .menu__li ul {
+  display: none;
+}
+.header__left ul .menu__li a svg {
+  display: none;
 }
 .header__left ul .main__li {
   margin-left: 25px;
@@ -133,7 +109,7 @@ header .hamburger.active .bar3 {
   color: #00653e;
 }
 .header__left ul .main__li:nth-child(1) {
-  margin-left: 40px;
+  margin-left: 0px;
 }
 @media screen and (max-width: 1420px) {
   .header__left ul .main__li:nth-child(7) {
@@ -161,16 +137,13 @@ header .hamburger.active .bar3 {
 .header__left ul .main__li:nth-child(8) {
   display: none;
   margin-right: 30px;
+  position: relative;
 }
 .header__left ul .main__li:nth-child(8).active svg {
   rotate: -180deg;
 }
 .header__left ul .main__li:nth-child(8):hover svg {
   background-color: #edebe9;
-}
-.header__left ul .main__li:nth-child(8) a {
-  display: flex;
-  height: 15px;
 }
 .header__left ul .main__li:nth-child(8) svg {
   width: 40px;
@@ -182,20 +155,11 @@ header .hamburger.active .bar3 {
 }
 @media screen and (max-width: 1420px) {
   .header__left ul .main__li:nth-child(8) {
-    display: block;
+    display: flex;
+    height: 15px;
   }
 }
 
-ul #side__nav {
-  position: absolute;
-  top: 50%;
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  width: 500px;
-  color: red;
-  align-items: center;
-}
 .header__right {
   min-width: 360px;
   max-width: 500px;
@@ -233,6 +197,271 @@ ul #side__nav {
 }
 .header__right .header__btns button {
   margin: 0 6px;
+}
+
+@media screen and (max-width: 770px) {
+  header .header__container.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+  }
+  header .header__container.active .header__left,
+header .header__container.active .header__right {
+    transform: translateX(0);
+  }
+  header .header__container .header__left,
+header .header__container .header__right {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  header .header__container .header__left {
+    background-color: #ffffff;
+    width: calc(100% - 70px);
+    height: auto;
+    align-items: baseline;
+  }
+  header .header__container .header__left nav {
+    width: 100%;
+    align-items: baseline;
+    padding: 40px 0;
+    position: relative;
+  }
+  header .header__container .header__left nav::before {
+    content: "";
+    width: calc(100% - 50px);
+    height: 2px;
+    background: #edebe9;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+  }
+  header .header__container .header__left ul {
+    align-items: baseline;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+  header .header__container .header__left ul .menu__li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+  }
+  header .header__container .header__left ul .menu__li a svg {
+    height: 50%;
+    width: 30px;
+  }
+  header .header__container .header__left ul .menu__li.active ul {
+    transform: translateX(0);
+  }
+  header .header__container .header__left ul .menu__li ul {
+    display: flex;
+    position: absolute;
+    background: #ffffff;
+    top: -40px;
+    left: 0;
+    height: 700px;
+    width: 100%;
+    z-index: 1;
+    justify-content: flex-start;
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+  }
+  header .header__container .header__left ul .menu__li ul li {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    width: 100%;
+    height: 56px;
+  }
+  header .header__container .header__left ul .menu__li ul li:hover {
+    background: #edebe9;
+  }
+  header .header__container .header__left ul .menu__li ul li:nth-child(1) {
+    background: #edebe9;
+  }
+  header .header__container .header__left ul .menu__li ul li:nth-child(1) svg {
+    height: 50%;
+    margin-right: 10px;
+    pointer-events: none;
+  }
+  header .header__container .header__left ul .main__li {
+    width: 100%;
+    height: 56px;
+    margin-left: 25px;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: #1f1f1f;
+    padding: 0 30px;
+    line-height: 56px;
+    min-width: 230px;
+    cursor: pointer;
+  }
+  header .header__container .header__left ul .main__li:hover {
+    background: #edebe9;
+    width: 100%;
+  }
+  header .header__container .header__left ul .main__li:nth-child(1), header .header__container .header__left ul .main__li:nth-child(2), header .header__container .header__left ul .main__li:nth-child(7), header .header__container .header__left ul .main__li:nth-child(6), header .header__container .header__left ul .main__li:nth-child(5), header .header__container .header__left ul .main__li:nth-child(4), header .header__container .header__left ul .main__li:nth-child(3) {
+    display: block;
+    margin: 0px;
+  }
+  header .header__container .header__left ul .main__li:nth-child(8) {
+    display: none;
+  }
+  header .header__container .header__right {
+    flex-direction: column-reverse;
+    height: 100%;
+    background-color: #ffffff;
+    width: calc(100% - 70px);
+    align-items: baseline;
+    min-width: 0px;
+    max-width: none;
+    justify-content: flex-end;
+    flex-grow: 1;
+    position: relative;
+  }
+  header .header__container .header__right.active::before {
+    transform: translateX(0);
+  }
+  header .header__container .header__right::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  header .header__container .header__right a {
+    margin-left: 25px;
+    margin-bottom: 100px;
+    height: 38px;
+  }
+  header .header__container .header__right a:hover {
+    color: #6c6c6c;
+    fill: #6c6c6c;
+  }
+  header .header__container .header__right a span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-left: 5px;
+  }
+  header .header__container .header__right a svg {
+    height: 60%;
+  }
+  header .header__container .header__right .header__btns {
+    margin-left: 25px;
+    background-color: #ffffff;
+    width: calc(100% - 70px);
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  header .header__container .header__right .header__btns button {
+    margin-bottom: 15px;
+    width: fit-content;
+  }
+}
+
+.item__drop {
+  position: absolute;
+  overflow: hidden;
+  top: 57px;
+}
+@media screen and (max-width: 1020px) {
+  .item__drop {
+    top: 42px;
+  }
+}
+.item__drop #side__nav {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background: white;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 4px solid #edebe9;
+  transform: translateY(-110%);
+  transition: transform 0.3s ease-in-out;
+}
+.item__drop #side__nav li {
+  pointer-events: all;
+  margin: 15px 0;
+}
+.item__drop #side__nav li a {
+  position: relative;
+  color: #1f1f1f;
+  cursor: pointer;
+  z-index: 2;
+}
+.item__drop #side__nav li a:hover {
+  color: #00653e;
+}
+
+.active ul#side__nav {
+  transform: translateY(0%);
+}
+
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  position: relative;
+}
+@media screen and (max-width: 1020px) {
+  header {
+    height: 70px;
+    padding: 10px 15px;
+  }
+}
+@media screen and (max-width: 770px) {
+  header {
+    justify-content: space-between;
+  }
+}
+header .header__container {
+  padding: 25px 33px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-grow: 1;
+}
+@media screen and (max-width: 770px) {
+  header .header__container {
+    padding: 0;
+    flex-grow: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    overflow-y: hidden;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+}
+header .header__logo {
+  display: block;
+  height: 51px;
+  margin: 0 7px 0 32px;
+}
+@media screen and (max-width: 1020px) {
+  header .header__logo {
+    margin: 0 7px 0 0;
+  }
+}
+@media screen and (max-width: 770px) {
+  header .header__logo {
+    height: 40px;
+  }
+}
+header .header__logo svg {
+  height: 100%;
 }
 
 .btn {

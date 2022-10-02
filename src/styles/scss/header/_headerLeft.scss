@@ -1,0 +1,91 @@
+.header__left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    ul {
+        display: flex;
+        align-items: center;
+        .menu__li {
+            ul {
+                display: none;
+            }
+            a {
+                svg {
+                    display: none;
+                }
+            }
+        }
+        .main__li {
+            margin-left: 25px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.13rem;
+            font-size: 1.15rem;
+            color: $black2;
+            font-style: normal;
+
+            @media screen and (max-width: 1020px) {
+                margin-left: 15px;
+            }
+            &:hover {
+                color: $dark__green;
+            }
+            &:nth-child(1) {
+                margin-left: 0px;
+            }
+            &:nth-child(7) {
+                @media screen and (max-width: 1420px) {
+                    display: none;
+                }
+            }
+            &:nth-child(6) {
+                width: fit-content;
+                @media screen and (max-width: 1250px) {
+                    display: none;
+                }
+            }
+            &:nth-child(5),
+            &:nth-child(4) {
+                @media screen and (max-width: 1100px) {
+                    display: none;
+                }
+            }
+            &:nth-child(3) {
+                @media screen and (max-width: 1050px) {
+                    display: none;
+                }
+            }
+            &:nth-child(8) {
+                display: none;
+                margin-right: 30px;
+                position: relative;
+
+                &.active {
+                    svg {
+                        rotate: -180deg;
+                    }
+                }
+                &:hover {
+                    svg {
+                        background-color: $white3;
+                    }
+                }
+
+                svg {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    padding: 8px;
+                    translate: 0 -25%;
+                    transition: rotate 0.3s ease-in-out;
+                }
+                @media screen and (max-width: 1420px) {
+                    display: flex;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}
