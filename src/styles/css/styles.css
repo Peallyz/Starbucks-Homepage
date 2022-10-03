@@ -1,3 +1,4 @@
+@import url("../../../public/assets/fonts/SoDoSans/stylesheet.css");
 *,
 ::before,
 ::after {
@@ -8,7 +9,7 @@
 
 body {
   height: 100vh;
-  font-family: SoDoSans, sans-serif;
+  font-family: "SoDo Sans", sans-serif;
 }
 
 html {
@@ -24,6 +25,45 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: "SoDo Sans", sans-serif;
+}
+
+.btn {
+  border-radius: 999px;
+  border: 1px solid #000000;
+  padding: 9px 17px;
+  line-height: 14px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.header__btn {
+  background: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+.header__btn:hover {
+  background: #f7f7f7;
+}
+.header__btn.reverse {
+  background: #000000;
+  color: #ffffff;
+}
+.header__btn.reverse:hover {
+  background: #3e3e3e;
+}
+
+.main__btn {
+  border-color: #008248;
+  color: #008248;
+  transition: all 0.2s ease-in-out;
+}
+.main__btn:hover {
+  background: #d4e9e2;
+}
+
 .hamburger {
   display: none;
 }
@@ -33,6 +73,11 @@ a {
     position: relative;
     height: 12px;
     width: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .hamburger:hover {
+    background-color: #edebe9;
   }
   .hamburger .bar1,
 .hamburger .bar3 {
@@ -94,9 +139,9 @@ a {
 .header__left ul .main__li {
   margin-left: 25px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.13rem;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   color: #1f1f1f;
   font-style: normal;
 }
@@ -200,6 +245,10 @@ a {
 }
 
 @media screen and (max-width: 770px) {
+  header .header__container {
+    overflow-x: hidden;
+    z-index: 10;
+  }
   header .header__container.active {
     background-color: rgba(0, 0, 0, 0.2);
     overflow-y: scroll;
@@ -369,6 +418,7 @@ header .header__container .header__right {
   position: absolute;
   overflow: hidden;
   top: 57px;
+  z-index: 3;
 }
 @media screen and (max-width: 1020px) {
   .item__drop {
@@ -464,30 +514,309 @@ header .header__logo svg {
   height: 100%;
 }
 
-.btn {
-  border-radius: 999px;
-  border: 1px solid #000000;
-  padding: 9px 17px;
-  line-height: 14px;
-  font-weight: 600;
-  font-size: 1.4rem;
-  cursor: pointer;
-  outline: none;
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr;
 }
-
-.header__btn {
-  background: #ffffff;
+@media screen and (max-width: 1025px) {
+  .grid {
+    display: block;
+  }
+}
+.grid__rewards {
+  position: relative;
+}
+@media screen and (max-width: 1025px) {
+  .grid__rewards {
+    max-height: 500px;
+    height: 115vw;
+  }
+}
+.grid__rewards .picture__rewards {
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+  background: url("../../../public/assets/img/3031_FR_MOP_Homepage_banner_v01.jpg.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1025px) {
+  .grid__rewards .picture__rewards {
+    background-position: 0px -150px;
+    position: relative;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .grid__rewards .picture__rewards {
+    background-position: top;
+  }
+}
+.grid__rewards .btn__container--rewards {
+  position: absolute;
+  left: 140px;
+  bottom: 30px;
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1025px) {
+  .grid__rewards .btn__container--rewards {
+    left: 40px;
+  }
+}
+.grid__rewards .btn__container--rewards .btn__rewards {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0);
+  color: #ffffff;
   transition: all 0.2s ease-in-out;
 }
-.header__btn:hover {
+.grid__rewards .btn__container--rewards .btn__rewards:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.grid__main {
+  display: grid;
+  padding: 25px 65px 40px 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 10px;
+}
+@media screen and (max-width: 1025px) {
+  .grid__main {
+    padding: 40px 15px 40px 15px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .grid__main {
+    grid-template-columns: 1fr;
+  }
+}
+.grid__main img {
+  width: 100%;
+}
+.grid__main--pos1 {
+  margin-bottom: 65px;
+}
+@media screen and (max-width: 770px) {
+  .grid__main--pos1 {
+    margin-bottom: 30px;
+  }
+}
+.grid__main--pos2 {
+  padding-left: 40px;
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 770px) {
+  .grid__main--pos2 {
+    margin-bottom: 110px;
+    padding-left: 0;
+  }
+}
+.grid__main--pos2 h3 {
+  font-size: 2rem;
+  font-size: 600;
+  line-height: 2.7rem;
+  margin-bottom: 20px;
+}
+.grid__main--pos2 p {
+  margin-bottom: 20px;
+}
+.grid__main .card {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px 1px #c4c4c4;
+}
+.grid__main .card__text {
+  padding: 30px 20px;
+}
+.grid__main .card .link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  border-top: 1px solid #edebe9;
+  padding: 0px 20px;
+  cursor: pointer;
+  color: #008248;
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+.grid__main .card .link svg {
+  height: 30px;
+  fill: #008248;
+}
+.grid__main .card .link:hover {
+  color: #000000;
+}
+.grid__main .card .link:hover svg {
+  fill: #000000;
+}
+.grid__main--pos3, .grid__main--pos4, .grid__main--pos5, .grid__main--pos6 {
+  margin-bottom: 30px;
+}
+.grid__main--pos3 h4, .grid__main--pos4 h4, .grid__main--pos5 h4, .grid__main--pos6 h4 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+  margin-bottom: 0px;
+}
+.grid__main--pos3 .main__btn, .grid__main--pos4 .main__btn, .grid__main--pos5 .main__btn, .grid__main--pos6 .main__btn {
+  margin: 20px 0;
+}
+@media screen and (max-width: 770px) {
+  .grid__main--pos3 .main__btn, .grid__main--pos4 .main__btn, .grid__main--pos5 .main__btn, .grid__main--pos6 .main__btn {
+    margin: 20px 0 0 0;
+  }
+}
+
+main {
+  height: auto;
+  color: #1f1f1f;
   background: #f7f7f7;
 }
-.header__btn.reverse {
-  background: #000000;
-  color: #ffffff;
+main h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding-left: 50px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
-.header__btn.reverse:hover {
-  background: #3e3e3e;
+@media screen and (max-width: 1025px) {
+  main h2 {
+    padding-left: 15px;
+  }
+}
+main .hero__banner {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5/2;
+}
+main .hero__banner img {
+  height: 100%;
+  width: 100%;
+}
+main .hero__txt {
+  padding: 40px 130px 40px 50px;
+}
+@media screen and (max-width: 1025px) {
+  main .hero__txt {
+    padding: 40px 15px 40px 15px;
+  }
+}
+main .hero__txt h1 {
+  font-size: 2.7rem;
+  font-weight: 400;
+  line-height: 3.7rem;
+}
+main .hero__txt p {
+  margin: 25px 0;
+}
+main p {
+  color: #6c6c6c;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding-right: 15px;
+}
+
+footer {
+  padding: 30px 45px;
+}
+@media screen and (max-width: 1025px) {
+  footer {
+    padding: 30px 15px;
+  }
+}
+footer .faq ul {
+  border-bottom: 2px solid #c4c4c4;
+}
+footer .faq ul .active .li__describe svg {
+  rotate: 180deg;
+}
+footer .faq ul .active .li__describe svghover {
+  background-color: #edebe9;
+}
+footer .faq ul .active .faq__side--li {
+  max-height: 100rem;
+}
+footer .faq ul .li__describe {
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+  font-size: 2.3rem;
+  line-height: 3.1rem;
+  cursor: pointer;
+}
+footer .faq ul .li__describe svg {
+  height: 35px;
+  border-radius: 50%;
+  padding: 5px;
+  transition: rotate 0.2s ease-in-out;
+  rotate: 0;
+}
+footer .faq ul .li__describe svg:hover {
+  background-color: #edebe9;
+}
+footer .faq ul .faq__side--li {
+  border: none;
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 0.3s ease-in-out;
+  transform-origin: top;
+}
+footer .faq ul .faq__side--li.active {
+  transition: max-height 0.1s ease-in-out;
+  max-height: 100rem;
+}
+footer .faq ul .faq__side--li li {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #6c6c6c;
+  height: 55px;
+}
+footer .faq ul .faq__side--li li:nth-last-child(1) {
+  margin-bottom: 15px;
+}
+footer .faq ul .faq__side--li li:hover {
+  color: #1f1f1f;
+}
+footer .credit .social__network {
+  margin: 40px 0;
+  display: flex;
+  height: 40px;
+}
+footer .credit .social__network svg {
+  margin-right: 15px;
+  fill: #1f1f1f;
+  cursor: pointer;
+  transition: scale 0.2s ease-in-out;
+}
+footer .credit .social__network svg:active {
+  scale: 90%;
+}
+footer .credit ul li {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+footer .credit ul li:hover {
+  color: #6c6c6c;
+}
+footer .credit p {
+  color: #6c6c6c;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 10px 0 300px;
 }
 
 /*# sourceMappingURL=styles.css.map */

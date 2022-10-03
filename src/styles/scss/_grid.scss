@@ -1,0 +1,55 @@
+.grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    @media screen and (max-width: 1025px) {
+        display: block;
+    }
+
+    &__rewards {
+        position: relative;
+
+        @media screen and (max-width: 1025px) {
+            max-height: 500px;
+            height: calc(100vw * 1.15);
+        }
+        .picture__rewards {
+            height: 100vh;
+            position: sticky;
+            top: 0px;
+            background: url("../../../public/assets/img/3031_FR_MOP_Homepage_banner_v01.jpg.jpg");
+            background-position: 50% 50%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @media screen and (max-width: 1025px) {
+                background-position: 0px -150px;
+                position: relative;
+                height: 100%;
+            }
+            @media screen and (max-width: 650px) {
+                background-position: top;
+            }
+        }
+        .btn__container--rewards {
+            position: absolute;
+            left: 140px;
+            bottom: 30px;
+            display: flex;
+            width: 200px;
+            justify-content: space-between;
+            @media screen and (max-width: 1025px) {
+                left: 40px;
+            }
+            .btn__rewards {
+                border-color: $white1;
+                background: rgba($white1, 0);
+                color: $white1;
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    background: rgba($white1, 0.12);
+                }
+            }
+        }
+    }
+}

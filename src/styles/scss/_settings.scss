@@ -1,5 +1,7 @@
 $light__green: #008248;
 $dark__green: #00653e;
+$very__light__green: #d4e9e2;
+$very__light__gray: #c4c4c4;
 $light__gray: #6c6c6c;
 $dark__gray: #3e3e3e;
 $transparent: rgba(0, 0, 0, 0);
@@ -8,6 +10,8 @@ $white2: #f7f7f7;
 $white3: #edebe9;
 $black1: #000000;
 $black2: #1f1f1f;
+
+@import url("../../../public/assets/fonts/SoDoSans/stylesheet.css");
 
 *,
 ::before,
@@ -19,7 +23,7 @@ $black2: #1f1f1f;
 
 body {
     height: 100vh;
-    font-family: SoDoSans, sans-serif;
+    font-family: "SoDo Sans", sans-serif;
 }
 html {
     font-size: 62.5%;

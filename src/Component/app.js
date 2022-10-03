@@ -5,8 +5,7 @@ const hamburgerBtn = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu__li");
 const sideMenu = document.querySelector(".header__right");
 const menuReturn = document.querySelector(".menu__return");
-
-let mobileNavbar = false;
+const faqList = document.querySelectorAll(".faq__li");
 
 //Header et Header Navbar
 
@@ -102,7 +101,6 @@ const handleSideMenu = (e) => {
 hamburgerBtn.addEventListener("click", () => handleHamburgerBtn());
 menu.addEventListener("click", (e) => handleSideMenu(e.target));
 menuReturn.addEventListener("click", (e) => handleSideMenu(e.target));
-console.log(menuReturn);
 
 //
 
@@ -110,17 +108,64 @@ console.log(menuReturn);
 
 const handleNavMore = () => {
     if (
-        headerNav[7].getAttribute("class") === null ||
-        headerNav[7].getAttribute("class") === "main__li"
+        headerNav[10].getAttribute("class") === null ||
+        headerNav[10].getAttribute("class") === "main__li"
     ) {
-        headerNav[7].classList.add("active");
-    } else if (headerNav[7].getAttribute("class") === "main__li active") {
-        headerNav[7].classList.remove("active");
+        headerNav[10].classList.add("active");
+    } else if (headerNav[10].getAttribute("class") === "main__li active") {
+        headerNav[10].classList.remove("active");
     }
 };
 
-headerNav[7].addEventListener("click", () => handleNavMore());
+headerNav[10].addEventListener("click", () => {
+    handleNavMore();
+});
 
 //
 
 //////////////////////////////
+
+// Footer
+
+const handleTreeMenu = (el) => {
+    switch (el.getAttribute("id")) {
+        case "about":
+            if (el.getAttribute("class") === "faq__li") {
+                el.classList.add("active");
+            } else if (el.getAttribute("class") === "faq__li active") {
+                el.classList.remove("active");
+            }
+
+            break;
+        case "contact":
+            if (el.getAttribute("class") === "faq__li") {
+                el.classList.add("active");
+            } else if (el.getAttribute("class") === "faq__li active") {
+                el.classList.remove("active");
+            }
+            break;
+        case "impact":
+            if (el.getAttribute("class") === "faq__li") {
+                el.classList.add("active");
+            } else if (el.getAttribute("class") === "faq__li active") {
+                el.classList.remove("active");
+            }
+            break;
+        case "carte":
+            if (el.getAttribute("class") === "faq__li") {
+                el.classList.add("active");
+            } else if (el.getAttribute("class") === "faq__li active") {
+                el.classList.remove("active");
+            }
+            break;
+
+        default:
+            break;
+    }
+};
+
+faqList.forEach((el) =>
+    el.addEventListener("click", (e) => handleTreeMenu(e.target.parentNode))
+);
+
+//////////////////////////
