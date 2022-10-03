@@ -6,7 +6,11 @@
 
 header {
     height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     background: $white1;
     position: relative;
@@ -15,29 +19,48 @@ header {
         padding: 10px 15px;
     }
     @media screen and (max-width: 770px) {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 
     .header__container {
         padding: 25px 33px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
 
         position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
         flex-grow: 1;
         @media screen and (max-width: 770px) {
             padding: 0;
+            -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
             flex-grow: 0;
             position: absolute;
             top: 70px;
             left: 0;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             width: 100vw;
             height: calc(100vh - 70px);
 
             overflow-y: hidden;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
             justify-content: flex-start;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
             align-items: flex-end;
         }
     }

@@ -20,7 +20,13 @@ footer {
                 }
             }
             .li__describe {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+
+                -webkit-box-pack: justify;
+
+                -ms-flex-pack: justify;
 
                 justify-content: space-between;
                 height: 88px;
@@ -31,6 +37,8 @@ footer {
                     height: 35px;
                     border-radius: 50%;
                     padding: 5px;
+                    -webkit-transition: rotate 0.2s ease-in-out;
+                    -o-transition: rotate 0.2s ease-in-out;
                     transition: rotate 0.2s ease-in-out;
                     rotate: 0;
 
@@ -43,9 +51,15 @@ footer {
                 border: none;
                 overflow: hidden;
                 max-height: 0px;
+                -webkit-transition: max-height 0.3s ease-in-out;
+                -o-transition: max-height 0.3s ease-in-out;
                 transition: max-height 0.3s ease-in-out;
+                -webkit-transform-origin: top;
+                -ms-transform-origin: top;
                 transform-origin: top;
                 &.active {
+                    -webkit-transition: max-height 0.1s ease-in-out;
+                    -o-transition: max-height 0.1s ease-in-out;
                     transition: max-height 0.1s ease-in-out;
                     max-height: 100rem;
                 }
@@ -67,12 +81,16 @@ footer {
     .credit {
         .social__network {
             margin: 40px 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             height: 40px;
             svg {
                 margin-right: 15px;
                 fill: $black2;
                 cursor: pointer;
+                -webkit-transition: scale 0.2s ease-in-out;
+                -o-transition: scale 0.2s ease-in-out;
                 transition: scale 0.2s ease-in-out;
                 &:active {
                     scale: 90%;

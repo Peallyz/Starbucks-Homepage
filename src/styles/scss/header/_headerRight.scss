@@ -3,8 +3,14 @@
     max-width: 500px;
     width: 50%;
     height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     margin-right: 40px;
     @media screen and (max-width: 1020px) {
@@ -12,8 +18,12 @@
     }
 
     a {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         height: 100%;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         &:hover {
             color: $light__gray;
@@ -29,6 +39,8 @@
         }
     }
     .header__btns {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         button {
             margin: 0 6px;

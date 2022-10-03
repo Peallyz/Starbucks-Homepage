@@ -9,21 +9,34 @@ header {
 
                 .header__left,
                 .header__right {
+                    -webkit-transform: translateX(0);
+                    -ms-transform: translateX(0);
                     transform: translateX(0);
                 }
             }
             .header__left,
             .header__right {
+                -webkit-transform: translateX(100%);
+                -ms-transform: translateX(100%);
                 transform: translateX(100%);
+                -webkit-transition: -webkit-transform 0.3s ease-in-out;
+                transition: -webkit-transform 0.3s ease-in-out;
+                -o-transition: transform 0.3s ease-in-out;
                 transition: transform 0.3s ease-in-out;
+                transition: transform 0.3s ease-in-out,
+                    -webkit-transform 0.3s ease-in-out;
             }
             .header__left {
                 background-color: $white1;
                 width: calc(100% - 70px);
                 height: auto;
+                -webkit-box-align: baseline;
+                -ms-flex-align: baseline;
                 align-items: baseline;
                 nav {
                     width: 100%;
+                    -webkit-box-align: baseline;
+                    -ms-flex-align: baseline;
                     align-items: baseline;
                     padding: 40px 0;
                     position: relative;
@@ -38,16 +51,31 @@ header {
                     }
                 }
                 ul {
+                    -webkit-box-align: baseline;
+                    -ms-flex-align: baseline;
                     align-items: baseline;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
                     justify-content: center;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
                     flex-direction: column;
                     width: 100%;
                     position: relative;
                     .menu__li {
                         a {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
+                            -webkit-box-pack: justify;
+                            -ms-flex-pack: justify;
                             justify-content: space-between;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
                             align-items: center;
                             pointer-events: none;
                             svg {
@@ -57,10 +85,14 @@ header {
                         }
                         &.active {
                             ul {
+                                -webkit-transform: translateX(0);
+                                -ms-transform: translateX(0);
                                 transform: translateX(0);
                             }
                         }
                         ul {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
                             position: absolute;
                             background: $white1;
@@ -69,11 +101,25 @@ header {
                             height: 700px;
                             width: 100%;
                             z-index: 1;
+                            -webkit-box-pack: start;
+                            -ms-flex-pack: start;
                             justify-content: flex-start;
+                            -webkit-transform: translateX(110%);
+                            -ms-transform: translateX(110%);
                             transform: translateX(110%);
+                            -webkit-transition: -webkit-transform 0.3s
+                                ease-in-out;
+                            transition: -webkit-transform 0.3s ease-in-out;
+                            -o-transition: transform 0.3s ease-in-out;
                             transition: transform 0.3s ease-in-out;
+                            transition: transform 0.3s ease-in-out,
+                                -webkit-transform 0.3s ease-in-out;
                             li {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
                                 align-items: center;
                                 padding-left: 25px;
                                 width: 100%;
@@ -127,18 +173,29 @@ header {
                 }
             }
             .header__right {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: reverse;
+                -ms-flex-direction: column-reverse;
                 flex-direction: column-reverse;
                 height: 100%;
                 background-color: $white1;
                 width: calc(100% - 70px);
+                -webkit-box-align: baseline;
+                -ms-flex-align: baseline;
                 align-items: baseline;
                 min-width: 0px;
                 max-width: none;
+                -webkit-box-pack: end;
+                -ms-flex-pack: end;
                 justify-content: flex-end;
+                -webkit-box-flex: 1;
+                -ms-flex-positive: 1;
                 flex-grow: 1;
                 position: relative;
                 &.active {
                     &::before {
+                        -webkit-transform: translateX(0);
+                        -ms-transform: translateX(0);
                         transform: translateX(0);
                     }
                 }
@@ -150,8 +207,15 @@ header {
                     top: 0;
                     left: 0;
                     background-color: $white1;
+                    -webkit-transform: translateX(100%);
+                    -ms-transform: translateX(100%);
                     transform: translateX(100%);
+                    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+                    transition: -webkit-transform 0.3s ease-in-out;
+                    -o-transition: transform 0.3s ease-in-out;
                     transition: transform 0.3s ease-in-out;
+                    transition: transform 0.3s ease-in-out,
+                        -webkit-transform 0.3s ease-in-out;
                 }
                 a {
                     margin-left: 25px;
@@ -176,11 +240,16 @@ header {
                     margin-left: 25px;
                     background-color: $white1;
                     width: calc(100% - 70px);
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
                     flex-direction: column;
                     margin-top: 20px;
 
                     button {
                         margin-bottom: 15px;
+                        width: -webkit-fit-content;
+                        width: -moz-fit-content;
                         width: fit-content;
                     }
                 }

@@ -12,6 +12,8 @@
         }
         .bar1,
         .bar3 {
+            -webkit-transition: rotate 0.15s ease, translate 0.15s 0.2s ease;
+            -o-transition: rotate 0.15s ease, translate 0.15s 0.2s ease;
             transition: rotate 0.15s ease, translate 0.15s 0.2s ease;
         }
         .bar1,
@@ -27,7 +29,11 @@
         }
         .bar2 {
             top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
+            -webkit-transition: opacity 0.1s 0.2s ease;
+            -o-transition: opacity 0.1s 0.2s ease;
             transition: opacity 0.1s 0.2s ease;
         }
         .bar3 {
@@ -37,6 +43,8 @@
         &.active {
             .bar1,
             .bar3 {
+                -webkit-transition: translate 0.15s ease, rotate 0.15s 0.2s ease;
+                -o-transition: translate 0.15s ease, rotate 0.15s 0.2s ease;
                 transition: translate 0.15s ease, rotate 0.15s 0.2s ease;
             }
             .bar1 {
