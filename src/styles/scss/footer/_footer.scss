@@ -1,0 +1,102 @@
+footer {
+    padding: 30px 45px;
+    @media screen and (max-width: 1025px) {
+        padding: 30px 15px;
+    }
+    .faq {
+        ul {
+            border-bottom: 2px solid $very__light__gray;
+            .active {
+                .li__describe {
+                    svg {
+                        rotate: 180deg;
+                        &hover {
+                            background-color: $white3;
+                        }
+                    }
+                }
+                .faq__side--li {
+                    max-height: 100rem;
+                }
+            }
+            .li__describe {
+                display: flex;
+
+                justify-content: space-between;
+                height: 88px;
+                font-size: 2.3rem;
+                line-height: 3.1rem;
+                cursor: pointer;
+                svg {
+                    height: 35px;
+                    border-radius: 50%;
+                    padding: 5px;
+                    transition: rotate 0.2s ease-in-out;
+                    rotate: 0;
+
+                    &:hover {
+                        background-color: $white3;
+                    }
+                }
+            }
+            .faq__side--li {
+                border: none;
+                overflow: hidden;
+                max-height: 0px;
+                transition: max-height 0.3s ease-in-out;
+                transform-origin: top;
+                &.active {
+                    transition: max-height 0.1s ease-in-out;
+                    max-height: 100rem;
+                }
+                li {
+                    font-weight: 600;
+                    font-size: 1.4rem;
+                    color: $light__gray;
+                    height: 55px;
+                    &:nth-last-child(1) {
+                        margin-bottom: 15px;
+                    }
+                    &:hover {
+                        color: $black2;
+                    }
+                }
+            }
+        }
+    }
+    .credit {
+        .social__network {
+            margin: 40px 0;
+            display: flex;
+            height: 40px;
+            svg {
+                margin-right: 15px;
+                fill: $black2;
+                cursor: pointer;
+                transition: scale 0.2s ease-in-out;
+                &:active {
+                    scale: 90%;
+                }
+            }
+        }
+        ul {
+            li {
+                font-weight: 600;
+                font-size: 1.4rem;
+                line-height: 1.7rem;
+                margin-bottom: 25px;
+                cursor: pointer;
+                &:hover {
+                    color: $light__gray;
+                }
+            }
+        }
+        p {
+            color: $light__gray;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            margin: 10px 0 300px;
+        }
+    }
+}
