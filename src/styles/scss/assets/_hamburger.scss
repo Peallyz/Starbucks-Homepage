@@ -5,6 +5,11 @@
         position: relative;
         height: 12px;
         width: 15px;
+        cursor: pointer;
+        border-radius: 50%;
+        &:hover {
+            background-color: $white3;
+        }
         .bar1,
         .bar3 {
             transition: rotate 0.15s ease, translate 0.15s 0.2s ease;
